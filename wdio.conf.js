@@ -1,3 +1,7 @@
+// Workaround: uncomment the two lines below to fix the missing host label.
+// import { hostname } from 'node:os'
+// process.env['ALLURE_LABEL_host'] = hostname()
+
 export const config = {
   runner: 'local',
   specs: ['./test/reproduction.test.js'],
