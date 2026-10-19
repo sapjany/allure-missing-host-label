@@ -1,0 +1,25 @@
+{
+  "name": "allure-missing-host-label",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf ./allure-results ./allure-report",
+    "test": "wdio run ./wdio.conf.js",
+    "check": "node ./check-host-label.js",
+    "report": "allure generate ./allure-results --output ./allure-report",
+    "report:open": "allure open ./allure-report",
+    "reproduce": "npm run clean && npm test && npm run check"
+  },
+  "devDependencies": {
+    "@wdio/allure-reporter": "10.0.1",
+    "@wdio/cli": "10.0.2",
+    "@wdio/local-runner": "10.0.2",
+    "@wdio/mocha-framework": "10.0.1",
+    "@wdio/spec-reporter": "10.0.1",
+    "allure": "3.20.1"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}
